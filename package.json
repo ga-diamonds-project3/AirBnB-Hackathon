@@ -23,7 +23,8 @@
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "node-fetch": "^1.6.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-d3-basic": "^1.6.11"
   },
   "devDependencies": {
     "babel": "^6.5.2",
