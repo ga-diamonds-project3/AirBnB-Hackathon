@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav.jsx';
 import './App.css';
 const d3 = require('d3');
 
+
 export default class App extends Component {
   render() {
     return(
