@@ -30,6 +30,9 @@ module.exports = {
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+        d3: 'd3'
     })
   ],
   module : {
