@@ -3,6 +3,8 @@ import Nav from '../Nav/Nav.jsx';
 import * as d3 from "d3";
 import Chart from "../../../node_modules/d3act/lib/components/Chart";
 import './App.css';
+// const d3 = require('d3');
+
 
 export default class App extends Component {
   render() {
