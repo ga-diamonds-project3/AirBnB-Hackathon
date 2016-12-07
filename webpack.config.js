@@ -8,6 +8,7 @@ const BUILD_DIR         = path.resolve(__dirname, 'dist');
 const APP_DIR           = path.resolve(__dirname, 'src');
 
 module.exports = {
+  name: 'chartComponent',
   entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
@@ -30,9 +31,6 @@ module.exports = {
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true
-    }),
-    new webpack.ProvidePlugin({
-        d3: 'd3'
     })
   ],
   module : {
@@ -54,6 +52,9 @@ module.exports = {
         test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
       }
-    ]
+    ],
+    resolve: {
+      extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
+    }
   }
 };
