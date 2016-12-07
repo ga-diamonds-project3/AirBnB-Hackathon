@@ -4,7 +4,10 @@ import './Nav.css';
 export default class Nav extends Component {
   render() {
     return(
-      // design nav here
+      <div>
+        <h1>Nav</h1>
+        {/* design nav here */}
+      </div>
     )
   }
 }
