@@ -52,9 +52,6 @@ module.exports = {
         test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
       }
-    ],
-    resolve: {
-      extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
-    }
+    ]
   }
 };
