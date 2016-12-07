@@ -4,7 +4,9 @@
   "description": "wdi-dsi-hackathon",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "rebuild": "webpack -d --progress --colors",
+    "watch": "webpack -d --progress --watch"
   },
   "repository": {
     "type": "git",
