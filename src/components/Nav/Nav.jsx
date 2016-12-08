@@ -100,11 +100,11 @@ export default class Nav extends Component {
             </div>
             <div className="nav-div">
               <h3> Rating </h3>
-                <input placeholder="50 - 100" type="number" name="points" step="5" min="50" max="100" />
+                <input id="rating" onChange={this.props.onSelectChange} placeholder="50 - 100" type="number" name="points" step="5" min="50" max="100" />
             </div>
             <div className="nav-div">
               <h3> # of Reviews </h3>
-                <input placeholder="10 - 200" type="number" name="points" step="10" min="10" max="200" />
+                <input id="reviews" onChange={this.props.onSelectChange} placeholder="10 - 200" type="number" name="points" step="10" min="10" max="200" />
             </div>
           </div>
         </div>
