@@ -1,83 +1,77 @@
 * {
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 1vw;
 }
 
 #selectors {
+  background-image: url('https://cdn0.vox-cdn.com/uploads/chorus_image/image/51625593/SOHOGALLERYBLDG94ThompsonStreetPHT-SoHo-NolitaNewYork_Tom_Postilio_DouglasElliman_Photography_39877142_high_res.0.0.jpg');
+  background-size: cover;
+  background-position: center;
+  /*border: 1px solid black;*/
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  width: 95vw;
-  height: 16vh;
-  margin: 0 auto;
+  width: 100vw;
+  height: 30vh;
 }
 
-.nav-div {
-  box-shadow: 0px 2px 2px lightgray;
-  padding: 5px 20px 20px 20px;
-
-/*  width: 300px;
-  height: 72px;*/
-
-  /*padding: 5px 20px 20px 20px;*/
-  border: 1px solid lightgray;
-  /*border-radius: 1px;*/
+.nav-bar {
+  /*border: 2px solid blue;*/
+  /*padding: 20px 20px 5px 20px;*/
+  background-color: rgba(255, 255, 255, .5);
+  box-shadow: 3px 3px 0 white;
+  border: 1px solid gray;
+  display: flex;
   width: 90vw;
-  height: 15vh;
-  /*margin: -1px;*/
-
+  height: 20vh;
 }
 
 .nav-div {
   display: inline-block;
-  padding: 5px 20px 0 20px;
-  border-right: 1px solid lightgray;
-  /*border-radius: 1px;*/
-  width: 15vw;
-  height: 14vh;
-  /*margin: -1px;*/
-}
-
-#middle {
-  /*margin-left: 1px;*/
-}
-
-#rating {
-  margin-top: 5px;
-}
-
-#reviews {
-  box-shadow: 2px 2px 2px lightgray;
-  margin-top: 5px;
+  padding: 3vh 0 0 3vw;
+  border-right: 1px solid gray;
+  width: 18vw;
+  height: 19.9vh;
 }
 
 select {
-  height: 30px;
-  width: 200px;
-  background-color: snow;
+  font-size: .8vw;
+  height: 4vh;
+  width: 9vw;
+  /*background-color: snow;*/
   background: url('https://d30y9cdsu7xlg0.cloudfront.net/png/221782-200.png') no-repeat right;
   background-size: 10px 10px;
   -webkit-appearance: none;
   outline: none;
   border: none;
-  border-bottom: 1px solid lightgray;
-  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid gray;
 }
 
 input {
-  height: 30px;
-  width: 200px;
-  background-color: #FFFFFF;
+  font-size: .8vw;
+  height: 4vh;
+  width: 9vw;
+  background-color: transparent;
   /*background: url('https://d30y9cdsu7xlg0.cloudfront.net/png/221782-200.png') no-repeat right;*/
   background-size: 10px 10px;
   -webkit-appearance: none;
   outline: none;
   border: none;
-  border-bottom: 1px solid lightgray;
-  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid gray;
+}
+
+#reviews {
+  border-right: none;
+}
+
+::-webkit-input-placeholder {
+   color: black;
 }
