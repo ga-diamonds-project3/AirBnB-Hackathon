@@ -2,10 +2,28 @@ const fetch = require('node-fetch');
 
 
 function getPrediction(req, res, next) {
-  fetch(`http://127.0.0.1:4000/predict?month=${req.query.month}&bedrooms=${req.query.bedrooms}&number_of_reviews=${req.query.reviews}&review_scores_rating=${req.query.rating}&neighborhood=${req.query.neighborhood}`)
-  // .then(r => r.json())
+// console.log(' ************* ',req.body)
+
+  fetch(`http://127.0.0.1:4000/predict?month=${req.body.month}&bedrooms=${req.body.room}&number_of_reviews=${req.body.reviews}&review_scores_rating=${req.body.ratings}&neighborhood=${req.body.neighborhood}`)
+  .then(r => r.json())
   .then((data) =>{
-    console.log(data)
+    // console.log('*************', data)
+    res.results = data
+    next()
+  })
+  .catch((err) => {
+    next(err)
+  })
+}
+
+function getResult(req, res, next) {
+// console.log(' ************* ',req.body)
+  console.log('hitting getResults!!!!')
+
+  fetch(`http://127.0.0.1:4000/result?month=${req.body.month}&bedrooms=${req.body.room}&number_of_reviews=${req.body.reviews}&review_scores_rating=${req.body.ratings}&neighborhood=${req.body.neighborhood}`)
+  .then(r => r.json())
+  .then((data) =>{
+    console.log('*************', data)
     res.results = data
     next()
   })
@@ -17,4 +35,5 @@ function getPrediction(req, res, next) {
 
 module.exports = {
   getPrediction,
+  getResult,
 };
