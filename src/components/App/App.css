@@ -1,0 +1,14 @@
+.Header-img {
+  background-image: url('https://cdn0.vox-cdn.com/uploads/chorus_image/image/51625593/SOHOGALLERYBLDG94ThompsonStreetPHT-SoHo-NolitaNewYork_Tom_Postilio_DouglasElliman_Photography_39877142_high_res.0.0.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 30vh;
+}
+
+.App-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
