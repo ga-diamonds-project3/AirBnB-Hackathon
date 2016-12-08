@@ -89,8 +89,8 @@ export default class Nav extends Component {
                 <option value="12"> December </option>
               </select>
             </div>
-            <div className="nav-div">
-              <h3> Rooms </h3>
+             <div className="nav-div">
+              <h3>Rooms</h3>
               <select id='room' onChange={this.props.onSelectChange}>
                 <option value="1"> 1 </option>
                 <option value="2"> 2 </option>
@@ -98,15 +98,16 @@ export default class Nav extends Component {
                 <option value="4"> 4 </option>
               </select>
             </div>
-            <div className="nav-div">
+            <div className="nav-div" id="rating">
               <h3> Rating </h3>
                 <input placeholder="50 - 100" type="number" name="points" step="5" min="50" max="100" />
             </div>
-            <div className="nav-div">
+            <div className="nav-div" id="reviews">
               <h3> # of Reviews </h3>
                 <input placeholder="10 - 200" type="number" name="points" step="10" min="10" max="200" />
             </div>
           </div>
+
         </div>
 
           <button>Search</button>
