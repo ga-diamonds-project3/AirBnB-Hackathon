@@ -17,6 +17,22 @@ export default class App extends Component {
     };
   }
 
+  componentWillMount() {
+    // get prediction of default state
+    this.getPrediction();
+  }
+
+  getPrediction() {
+    const payload = JSON.stringify(this.state);
+    fetch('/predict', {
+      headers : { 'Content-Type': 'application/json' },
+      method : 'POST',
+      body: payload,
+    })
+    .then(r => console.log('sucess call to server'))
+    .catch(err => console.log('error call to server'));
+  }
+
   handleSubmit(e) {
     // console.log('handleSubmit', e.target)
     e.preventDefault();
@@ -45,9 +61,9 @@ export default class App extends Component {
     return(
       <div className="App-container">
         <div className="App-nav">
-          <Nav 
-            handleSubmit={event => this.handleSubmit(event)} 
-            onSelectChange={event => this.onSelectChange(event)} 
+          <Nav
+            handleSubmit={event => this.handleSubmit(event)}
+            onSelectChange={event => this.onSelectChange(event)}
             />
         </div>
 
