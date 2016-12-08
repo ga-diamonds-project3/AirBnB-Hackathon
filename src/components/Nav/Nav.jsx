@@ -4,11 +4,12 @@ import './Nav.css';
 export default class Nav extends Component {
   render() {
     return(
+      <form onSubmit={this.props.handleSubmit}>
 
         <div id="selectors">
           <div className="nav-div">
             <h3> Where </h3>
-            <select>
+            <select id='neighborhood' onChange={this.props.onSelectChange}>
               <option value="0"> Alphabet City </option>
               <option value="1"> Battery Park City </option>
               <option value="2"> Bay Ridge </option>
@@ -72,7 +73,7 @@ export default class Nav extends Component {
           </div>
           <div className="nav-div" id="middle">
           <h3> When </h3>
-            <select>
+            <select id='month' onChange={this.props.onSelectChange}>
               <option value="1"> January </option>
               <option value="2"> Febuary </option>
               <option value="3"> March </option>
@@ -89,7 +90,7 @@ export default class Nav extends Component {
           </div>
           <div className="nav-div">
             <h3> Rooms </h3>
-            <select>
+            <select id='room' onChange={this.props.onSelectChange}>
               <option value="1"> 1 </option>
               <option value="2"> 2 </option>
               <option value="3"> 3 </option>
@@ -98,6 +99,9 @@ export default class Nav extends Component {
           </div>
 
         </div>
+
+          <button>Search</button>
+        </form>
     )
   }
 }
