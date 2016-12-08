@@ -32,7 +32,7 @@ export default class Nav extends Component {
               <option value="12">December</option>
             </select>
           </div>
-          <div className="nav-div">
+          <div className="nav-div" id="end">
             <h3>Rooms</h3>
             <select>
               <option value="1">1</option>

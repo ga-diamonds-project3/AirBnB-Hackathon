@@ -10,6 +10,8 @@ export default class App extends Component {
   render() {
     return(
       <div className="App-container">
+        <div className="Header-img">
+        </div>
         <div className="App-nav">
           <Nav />
         </div>
