@@ -10,4 +10,6 @@ app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'dist')));
 
+app.use('/', require('./routes/airbnb.js'));
+
 app.listen(PORT, () => console.log('Server running and listening to', PORT));

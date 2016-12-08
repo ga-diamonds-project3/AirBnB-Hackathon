@@ -16,7 +16,43 @@ export default class App extends Component {
       neighborhood: 0,
       month: 1,
       room: 1,
+      ratings: 50,
+      reviews: 10,
     };
+  }
+
+  componentWillMount() {
+    // get prediction of default state
+    // this.getPrediction();
+    this.getResult();
+  }
+
+  getResult() {
+    const payload = JSON.stringify(this.state);
+    fetch('/result', {
+      headers : { 'Content-Type': 'application/json' },
+      method : 'POST',
+      body: payload,
+    })
+    .then(r => r.json())
+    .then(data => {
+      console.log('successful call', data)
+    })
+    .catch(err => console.log('error call to server'));
+  }
+
+  getPrediction() {
+    const payload = JSON.stringify(this.state);
+    fetch('/predict', {
+      headers : { 'Content-Type': 'application/json' },
+      method : 'POST',
+      body: payload,
+    })
+    .then(r => r.json())
+    .then(data => {
+      console.log('successful call', data)
+    })
+    .catch(err => console.log('error call to server'));
   }
 
   handleSubmit(e) {
@@ -30,17 +66,23 @@ export default class App extends Component {
     // console.log(e.target.value)
     // console.log(e.currentTarget.id)
     switch(e.currentTarget.id) {
-      case 'neighborhood':
-        // console.log('hey neighbor')
-        this.setState({ neighborhood: parseInt(e.target.value) });
-        break;
-      case 'month':
-        this.setState({ month: parseInt(e.target.value) });
-      case 'room':
-        this.setState({ room: parseInt(e.target.value) });
-      default:
-        // console.log('defaulttt')
-    }
+         case 'neighborhood':
+           // console.log('hey neighbor')
+           this.setState({ neighborhood: parseInt(e.target.value) });
+           break;
+         case 'month':
+           this.setState({ month: parseInt(e.target.value) });
+           break;
+         case 'room':
+           this.setState({ room: parseInt(e.target.value) });
+           break;
+         case 'rating':
+           this.setState({ rating: parseInt(e.target.value) });
+           break;
+         case 'reviews':
+           this.setState({ reviews: parseInt(e.target.value) });
+           break;
+       }
   }
 
   render() {
@@ -49,9 +91,9 @@ export default class App extends Component {
         <div className="Header-img">
         </div>
         <div className="App-nav">
-          <Nav 
-            handleSubmit={event => this.handleSubmit(event)} 
-            onSelectChange={event => this.onSelectChange(event)} 
+          <Nav
+            handleSubmit={event => this.handleSubmit(event)}
+            onSelectChange={event => this.onSelectChange(event)}
             />
         </div>
 
