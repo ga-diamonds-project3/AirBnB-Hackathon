@@ -21,6 +21,40 @@ export default class App extends Component {
     };
   }
 
+  componentWillMount() {
+    // get prediction of default state
+    // this.getPrediction();
+    this.getResult();
+  }
+
+  getResult() {
+    const payload = JSON.stringify(this.state);
+    fetch('/result', {
+      headers : { 'Content-Type': 'application/json' },
+      method : 'POST',
+      body: payload,
+    })
+    .then(r => r.json())
+    .then(data => {
+      console.log('successful call', data)
+    })
+    .catch(err => console.log('error call to server'));
+  }
+
+  getPrediction() {
+    const payload = JSON.stringify(this.state);
+    fetch('/predict', {
+      headers : { 'Content-Type': 'application/json' },
+      method : 'POST',
+      body: payload,
+    })
+    .then(r => r.json())
+    .then(data => {
+      console.log('successful call', data)
+    })
+    .catch(err => console.log('error call to server'));
+  }
+
   handleSubmit(e) {
     // console.log('handleSubmit', e.target)
     e.preventDefault();
